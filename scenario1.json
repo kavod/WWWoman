@@ -1,0 +1,19 @@
+{
+  "description": "bla bla bla",
+  "uriList":[
+    {
+      "uri": "http://niouf.fr",
+      "template":[
+        "test.json",
+        {
+          "body":"{\"niorf\":\"niorf\"}"
+        }
+      ],
+      "content_type":"application/json"
+    },
+    {
+      "uri": "http://niorf.fr",
+      "body": "niouf"
+    }
+  ]
+}
