@@ -4,7 +4,7 @@
     {
       "uri": "http://niouf.fr",
       "template":[
-        "test.json",
+        "tests/test.json",
         {
           "body":"{\"niorf\":\"niorf\"}"
         }
