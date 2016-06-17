@@ -46,4 +46,8 @@ class TestWWWoman(unittest.TestCase):
         self.assertEqual(r.json(),response2)
         r = requests.get("http://niorf.fr")
         self.assertEqual(r.content,"niouf")
-print(TestWWWoman.test_scenario.__name__)
+
+@WWWoman.WWWoman(uri=url,body=json.dumps(response2),content_type="application/json")
+def test_function():
+    r = requests.get(url)
+    assert(r.json(),response2)
