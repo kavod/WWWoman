@@ -4,7 +4,7 @@ WWWoman is an extension of the [httpretty] client mocking tool
 
 ## Simple use
 You can directly register URI using decorator like this:
-```
+```python
 import requests
 from WWWoman import WWWoman
 
@@ -14,7 +14,7 @@ def test_wwwoman():
     assert(r.content=='test')
 ```
 Compatible with nosetests :
-```
+```bash
 $ nosetests
 .
 ----------------------------------------------------------------------
@@ -27,7 +27,7 @@ or with unittest.
 ## Template management
 Instead pushing the body from a string, you can use ``template`` parameter in order to indicate a file (flat or binary).
 Example with ``test.html`` containing `my test` string (and final newline) as content:
-```
+```python
 import requests
 from WWWoman import WWWoman
 
@@ -41,7 +41,7 @@ def test_wwwoman():
 When you write a really large number of unit tests, you may want define scenarios with a set of several uri to mock.
 For this, WWWomanScenario decorator is available:
 **scenario.json**
-```
+```json
 {
   "description": "blah blah blah",
   "uriList":[
@@ -65,7 +65,7 @@ For this, WWWomanScenario decorator is available:
 You can see that template parameter is a list. In this case, registered uri (niouf.fr) will first give the content of test.json ('my test') then, the next call will response 'niouf niouf'.
 
 Let's use with WWWomanScenario:
-```
+```python
 import requests
 from WWWoman import WWWomanScenario
 
@@ -80,5 +80,6 @@ def test_wwwoman():
     r=requests.get("http://niorf.fr")
     assert(r.content=='niouf')
 ```
+
 
 [httpretty]: https://github.com/gabrielfalcao/HTTPretty
