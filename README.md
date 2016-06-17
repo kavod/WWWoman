@@ -6,9 +6,9 @@ WWWoman is an extension of the [httpretty] client mocking tool
 You can directly register URI using decorator like this:
 ```python
 import requests
-from WWWoman import WWWoman
+from wwwoman import WWWoman
 
-@WWWoman(uri="http://test.com",method='GET',body='test')
+@wwwoman(uri="http://test.com",method='GET',body='test')
 def test_wwwoman():
     r=requests.get("http://test.com")
     assert(r.content=='test')
@@ -29,9 +29,9 @@ Instead pushing the body from a string, you can use ``template`` parameter in or
 Example with ``test.html`` containing `my test` string (and final newline) as content:
 ```python
 import requests
-from WWWoman import WWWoman
+from wwwoman import WWWoman
 
-@WWWoman(uri="http://test.com",method='GET',template='test.html')
+@wwwoman(uri="http://test.com",method='GET',template='test.html')
 def test_wwwoman():
     r=requests.get("http://test.com")
     assert(r.content=='my test\n')
@@ -67,9 +67,9 @@ You can see that template parameter is a list. In this case, registered uri (nio
 Let's use with WWWomanScenario:
 ```python
 import requests
-from WWWoman import WWWomanScenario
+from wwwoman import WWWomanScenario
 
-@WWWomanScenario('scenario.json')
+@wwwomanScenario('scenario.json')
 def test_wwwoman():
     r=requests.get("http://niouf.fr")
     assert(r.content=='my test\n')
