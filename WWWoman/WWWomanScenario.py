@@ -11,9 +11,9 @@ def WWWomanScenario(filename):
         script = json.load(fd)
     def decorator(func):
         @httpretty.activate
-        def test_wrapped(cls):
+        def test_wrapped(*args,**kw):
             for item in script['uriList']:
                 WWWoman.wwwoman(**item)
-            return func(cls)
+            return func(*args,**kw)
         return test_wrapped
     return decorator
