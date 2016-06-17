@@ -20,7 +20,7 @@ def WWWoman(
     def decorator(func):
         # wrapper name begins by test_ in order to be recognized by nosetests
         @httpretty.activate
-        def test_wrapped(cls):
+        def test_wrapped(*args,**kw):
             wwwoman(
                 template=template,
                 method=method,
@@ -34,7 +34,7 @@ def WWWoman(
                 priority=priority,
                 headers=headers
             )
-            return func(cls)
+            return func(*args,**kw)
         return test_wrapped
     return decorator
 
