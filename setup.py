@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='wwwoman',
-      version='0.1',
+      version='0.2',
       description='Extension of HTTPretty',
       url='https://github.com/kavod/WWWoman',
       author='Brice GRICHY',

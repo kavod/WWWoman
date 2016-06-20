@@ -8,7 +8,7 @@ You can directly register URI using decorator like this:
 import requests
 from wwwoman import WWWoman
 
-@wwwoman(uri="http://test.com",method='GET',body='test')
+@register(uri="http://test.com",method='GET',body='test')
 def test_wwwoman():
     r=requests.get("http://test.com")
     assert(r.content=='test')
@@ -31,7 +31,7 @@ Example with ``test.html`` containing `my test` string (and final newline) as co
 import requests
 from wwwoman import WWWoman
 
-@wwwoman(uri="http://test.com",method='GET',template='test.html')
+@register(uri="http://test.com",method='GET',template='test.html')
 def test_wwwoman():
     r=requests.get("http://test.com")
     assert(r.content=='my test\n')
@@ -69,7 +69,7 @@ Let's use with WWWomanScenario:
 import requests
 from wwwoman import WWWomanScenario
 
-@wwwomanScenario('scenario.json')
+@register_scernario('scenario.json')
 def test_wwwoman():
     r=requests.get("http://niouf.fr")
     assert(r.content=='my test\n')

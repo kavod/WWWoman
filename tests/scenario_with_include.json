@@ -1,0 +1,23 @@
+{
+  "description": "bla bla bla",
+  "baseuri": "http://plouf.fr",
+  "includes": [
+    "tests/scenario_with_baseuri.json"
+  ],
+  "uriList":[
+    {
+      "uri": "test.html",
+      "template":[
+        "tests/test.json",
+        {
+          "body":"{\"niorf\":\"niorf1\"}"
+        }
+      ],
+      "content_type":"application/json"
+    },
+    {
+      "uri": "http://niorf.fr",
+      "body": "niouf"
+    }
+  ]
+}
